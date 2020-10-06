@@ -1,4 +1,5 @@
 import React from 'react';
+import HomeScreen from './screens/Home/HomeScreen';
 import './App.css';
 import Router from './Routers/Routers';
 
