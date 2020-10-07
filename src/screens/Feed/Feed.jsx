@@ -23,7 +23,8 @@ const Feed = () => {
                 <CardRestaurant/>
                 <CardRestaurant/>
            </CardsContainer>
+           
         </FeedContainer>
     )
 }
-export default Feed
+export default Feed;

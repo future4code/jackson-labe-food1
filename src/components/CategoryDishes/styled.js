@@ -1,13 +1,6 @@
 import styled from 'styled-components';
-import {primaryColor, neutralColor, veryLightPink, alert} from '../../constants/colors'
+import { neutralColor } from '../../constants/colors'
 
-
-export const ContainerRestaurant = styled.div`
-  width: 100%;
-  margin:0;
-  position: relative;
-  box-sizing: border-box;
-`
 export const Sections = styled.section`
   width: 100%;
   margin:0;
