@@ -12,8 +12,6 @@ const Search = (props) => {
                 <TextField
                     placeholder={"Search"}
                     variant="outlined" 
-                   
-                    labelWidth={70}
                     margin={"normal"}
                     InputProps={{
                         startAdornment: (
