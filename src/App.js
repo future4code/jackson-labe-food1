@@ -8,6 +8,7 @@ import SignUp from './screens/SignUp/SignUp';
 function App() {
   return (
     < >
+    <Router/>
     </>
   );
 }
