@@ -21,4 +21,9 @@ export const PageContainer = styled.div`
     align-items: center;
     background-color: #000;
 `
-
+export const FullContainer = styled.div`
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+`
