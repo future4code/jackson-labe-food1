@@ -18,7 +18,14 @@ const AdressForm = () => {
     //   }, [])
 
     /////////////Cadastro do endereço////////////////////////
-    const [form, setForm ] = useState({street: "", number: "", neighbourhood: "", city: "", state: "", complement: ""})
+    const [form, setForm ] = useState({
+                                        street: "", 
+                                        number: "", 
+                                        neighbourhood: "", 
+                                        city: "", 
+                                        state: "", 
+                                        complement: ""
+                                    })
     const capturaEndereco = (event) =>{
 
         const { name, value } = event.target
@@ -26,18 +33,16 @@ const AdressForm = () => {
     }
     
     const CadAdrres = () => {
+        console.log(form);
         const elemento = document.getElementById("form-enderec")
         const valido = elemento.checkValidity()
         elemento.reportValidity()
         if(valido){
                 axios.put(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/address`,{
                     headers:{
-                               auth: localStorage.getItem('token') 
+                               auth: localStorage.getItem('token')
                            }
-               })
-                .then((Response)=> {console.log(Response)
-                // goToFeed(history)
-                })
+               },form).then((Response)=> {goToFeed(history)})
                 .catch((error) => {
                     console.log(error)
                     alert("Erro tente cadastrar novamente")
