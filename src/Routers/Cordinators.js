@@ -15,17 +15,17 @@ export function goToSignUp(history){
   }
 
 export function goToAddress(history){
-    history.push(`/{{appName}}/address`)
+    history.push(`/futureEatsA/address`)
   }
 
 export function goToPerfil(history){
-      history.push(`/{{appName}}/profile`)
+      history.push(`/futureEatsA/profile`)
   }
 export function goToRestautante(history){
-    history.push(`/{{appName}}/restaurants/100`)
+    history.push(`/futureEatsA/restaurants/100`)
 }
 export function goToCarrinho(history){
-    history.push("/{{appName}}/active-order")
+    history.push("/futureEatsA/active-order")
 }
   
   
