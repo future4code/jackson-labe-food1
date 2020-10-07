@@ -29,16 +29,34 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 `
+export const LogoImg = styled.img`
+  width: 104px;
+  height: 58px;
+  margin-top: 88px;
 
-export const ConfirmButton = styled(Button)`
-    color:#5cb646;
-    background-color: #5cb646;
+`
+const Div = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self:center;
+    height: 100vh;
+`
+const FormAddre = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+export const NameDiv = styled.h4`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`
+const Campo = styled.div`
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+`
 
-    &&:hover{
-        background-color: #5cb646;
-    }
-`  
-// export const LogoImage = styled.img`
-//   width: 70vw;
-//   max-width: 350px;
-// `
