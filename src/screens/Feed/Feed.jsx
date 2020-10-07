@@ -26,4 +26,4 @@ const Feed = () => {
         </FeedContainer>
     )
 }
-export default Feed
+export default Feed;
