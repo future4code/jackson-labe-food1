@@ -23,6 +23,7 @@ const Feed = () => {
                 <CardRestaurant/>
                 <CardRestaurant/>
            </CardsContainer>
+           
         </FeedContainer>
     )
 }
