@@ -4,6 +4,7 @@ import {primaryColor, neutralColor, veryLightPink, alert} from '../../constants/
 export const CardContainer = styled.div`
     display: flex;
     align-items: center;
+    margin: 0 0 8px 0;
     width: 328px;
     height: 112px;
     border-radius: 8px;
@@ -14,6 +15,8 @@ export const CardContainer = styled.div`
 export const Img = styled.img`
   width: 96px;
   height: 112px;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
 `
 
 export const Info = styled.div`
