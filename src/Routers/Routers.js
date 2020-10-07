@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import Feed from '../screens/Feed/Feed';
 import HomeScreen from '../screens/Home/HomeScreen';
 import Login from '../screens/Login/Login';
+import AdressForm from '../screens/Profile/AddressForm/AddressForm';
 import Profile from '../screens/Profile/Profile';
 import OrderInProgress from '../screens/Restaurant/OrderInProgress';
 import Restaurant from '../screens/Restaurant/Restaurant';
@@ -24,7 +25,7 @@ const Router = () => {
                         <SignUp/>
                     </Route>
                     <Route exact path={"/{{appName}}/address"} >
-                        {/* <Signaddress/> */}
+                        <AdressForm/>
                     </Route>
                     <Route exact path={"/feed"}>
                         <Feed/>
