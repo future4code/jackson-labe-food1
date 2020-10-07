@@ -12,15 +12,6 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   box-shadow: 0 0.5px 0 0 #d8d8d8;
-
-    border: 1px solid black;
-    height: 667px;
-    width: 375px; 
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  
 `
    
 export const FullContainer = styled.div`
