@@ -5,10 +5,12 @@ import { Button, ThemeProvider } from '@material-ui/core';
 import { Campo, Div, FormAddre, H4, theme } from './StyledAddressForm';
 import { goToFeed, goToLogin } from '../../../Routers/Cordinators';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import useProtectedPage from '../../../hooks/useProtectedPage';
 
 
 
 const AdressForm = () => {
+    useProtectedPage()
     const history = useHistory();
   //////////validação do usuário por meio do token////////  
     // useLayoutEffect(() => {

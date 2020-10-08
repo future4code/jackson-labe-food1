@@ -5,9 +5,11 @@ import { ThemeProvider } from '@material-ui/core'
 import theme from '../../constants/theme'
 import axios from 'axios'
 import {Header, UserContainer, AddressSection, TextAddress, StreetAddress, HistoricRequests} from './styled'
+import useProtectedPage from '../../hooks/useProtectedPage';
 
 
 const Profile = () => {
+    useProtectedPage()
     const [user, setUser] = useState ({})
     const [address, setAddress] = useState ('')
 

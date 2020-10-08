@@ -8,8 +8,11 @@ import Footer from '../../components/Footer/Footer';
 import { getRestaurants } from '../../services/user';
 import useProtectedPage from '../../hooks/useProtectedPage'
 import Loading from '../../components/Loading/Loading';
+import { useHistory } from 'react-router-dom';
+import { goToRestautante } from '../../Routers/Cordinators'
 
 const Feed = () => {
+    const history = useHistory()
     useProtectedPage()
     const [listRestaurants, setListRestaurants] = useState([])
     const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +33,7 @@ const Feed = () => {
 
            <CardsContainer>
                {listRestaurants.map((restaurant)=>{
-                   return <CardRestaurant data={restaurant}/>
+                   return <CardRestaurant data={restaurant} onClick={() => goToRestautante(history, restaurant.id)}/>
                })}
 
            </CardsContainer>
