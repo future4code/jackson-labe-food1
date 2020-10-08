@@ -6,51 +6,38 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import { Button, FormControl, InputLabel, OutlinedInput } from '@material-ui/core';
-import theme from '../../constants/theme';
 import { useHistory } from 'react-router-dom';
 import useForm from '../../hooks/useForm';
 import { login } from '../../services/user'
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 
-  const LoginForm = (props) => {
+  const LoginForm = () => {
     const [form, handleInputChange] = useForm({ email: '', password: ''})
     const [isLoading, setIsLoading] = useState(false)
+    const [values, setValues] = useState({
+      showPassword: false,
+    })
     const history = useHistory()
 
     const onClickLogin = (event) => {
       event.preventDefault()
-      const element = document.getElementById('login_form')
+      // const element = document.getElementById('login_form')
       // const isValid = element.checkValidity()
       // element.reportValidity()
       // if (isValid) {
-
         login(form, history, setIsLoading)
         console.log(form)
       // }
     }
 
-  const [values, setValues] = useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
   const handleClickShowPassword = () => {
     setValues({ ...values, showPassword: !values.showPassword });
   };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  }; 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };    
 return (
   <FormControl  variant="outlined" fullWidth>
-   {/* <form id={'login_form'}> */}
-         <LoginFormContainer  >
+         <LoginFormContainer id={'login_form'}>  
            <InputsContainer >
              <TextField 
               value={form.email}
@@ -64,32 +51,20 @@ return (
               autoFocus
               margin={'normal'}
             />
-            <TextField
-              value={form.password}
-              name={'password'}
-              onChange={handleInputChange}
-              label={'Senha'}
-              variant={'outlined'}
-              type={'password'}
-              fullWidth
-              required
-              margin={'normal'}
-            />
 
-          {/* <FormControl  variant="outlined" fullWidth> */}
-          {/* <InputLabel >Senha</InputLabel>
+          <FormControl  variant="outlined" fullWidth required margin={'normal'}>
+          <InputLabel >Senha</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
             value={form.password}
             name={'password'}
-            onChange={handleChange('password')}
+            onChange={handleInputChange}
             endAdornment={
               <InputAdornment position="end">
                 <IconButton
                   aria-label="toggle password visibility"
                   onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
                   edge="end"
                 >
                   {values.showPassword ? <Visibility /> : <VisibilityOff />}
@@ -97,8 +72,8 @@ return (
               </InputAdornment>
             }
             labelWidth={50}
-          /> */}
-        {/* </FormControl> */}
+          />
+        </FormControl>
           </InputsContainer>
           
           <Button  
@@ -113,7 +88,6 @@ return (
           </Button>
           
         </LoginFormContainer>
-   {/* </form> */}
    </FormControl>
   )
 }

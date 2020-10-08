@@ -12,18 +12,22 @@ export const StatusBar = styled.div`
     
 `
 export const PageContainer = styled.div`
-    height: 647px;
-    width: 100%; 
-    height: 100%;
+    height: 640px;
+    width: 360px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #000;
+    background-color: #000000;
 `
 export const FullContainer = styled.div`
     height: 100vh;
     width: 100vw;
     display: flex;
     align-items: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 `
+
+
