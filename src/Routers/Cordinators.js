@@ -1,3 +1,6 @@
+export function goToBack(history){
+    history.goBack()
+  }
 export function goToInicial(history){
     history.push("/")
   }

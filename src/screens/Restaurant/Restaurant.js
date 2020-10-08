@@ -8,7 +8,7 @@ const Restaurant = () => {
   
     return (
       <ContainerRestaurant>
-          <Header title={"Restaurante"}/>
+          <Header title={"Restaurante"} btnBack={true}/>
           <DetailsRestaurant/>
           <CategoryDishes title={"Principais"}/>
           <CategoryDishes title={"Acompanhamento"}/>

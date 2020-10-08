@@ -10,7 +10,6 @@ export const FullContainer = styled.div`
     justify-content: center;
 `
 export const ScreenContainer = styled.div`
-
     height: 640px;
     width: 360px;
     display: flex;
@@ -23,15 +22,11 @@ export const HeaderContainer = styled.header`
   justify-content: center;
   align-items: center;
   box-shadow: 0 0.5px 0 0 #d8d8d8;
-  border: 1px solid black;
-  height: 667px;
+  border-bottom: 1px solid black;
   width: 375px; 
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  
-
+  margin: 0;
+  position: relative;
+  background-color: #fff;
 `
    
 
