@@ -2,7 +2,7 @@ import { createMuiTheme } from "@material-ui/core";
 
 export default createMuiTheme({
   Typography:{
-    fontFamily: 'Roboto'
+    fontFamily: 'Roboto-Regular'
   },
   palette: {
     primary: {
