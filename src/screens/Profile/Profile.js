@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Footer from '../../components/Footer/Footer'
 import CreateOutlinedIcon from '@material-ui/icons/CreateOutlined';
+import { ThemeProvider } from '@material-ui/core'
+import theme from '../../constants/theme'
 import axios from 'axios'
-import { AddressSection } from '../../components/Footer/style';
+import {Header, UserContainer, AddressSection, TextAddress, StreetAddress, HistoricRequests} from './styled'
+
 
 const Profile = () => {
     const [user, setUser] = useState ({})
+    const [address, setAddress] = useState ('')
 
-    
     useEffect(() => {
         const getUser = () =>{
             axios.get('https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/profile', {
@@ -16,7 +19,7 @@ const Profile = () => {
                 }
             }).then(response => {
                 setUser(response.data.user)
-                console.log(response.data)
+                console.log(response)
             }).catch(error => {
                 console.log(error)
             })
@@ -27,17 +30,25 @@ const Profile = () => {
     return (
         <div>
             <main>
-                <section>
-                  <p> { user.name } </p>
-                  <p> { user.email } </p>
-                  <p> { user.cpf } </p>
-                </section>
-                <AddressSection>
-                    <p>endereço</p>
-                </AddressSection>
-                <section>
-                    
-                </section>
+                <Header>
+                    <p>Meu perfil</p>
+                    <hr/>
+                </Header>
+                <ThemeProvider theme={theme}>
+                   <UserContainer>
+                     <p> { user.name } </p>
+                     <p> { user.email } </p>
+                     <p> { user.cpf } </p>
+                   </UserContainer>
+                   <AddressSection>
+                       <TextAddress>Endereço Cadastrado</TextAddress>
+                       <StreetAddress>Rua tigrinhos, 24</StreetAddress>
+                   </AddressSection>
+                   <HistoricRequests>
+                       <p>Histórico de pedidos</p>
+                       <hr/>
+                   </HistoricRequests>      
+                </ThemeProvider>
             </main>
             <Footer/>
         </div>

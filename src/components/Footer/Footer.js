@@ -7,13 +7,11 @@ import { InconContainer } from './style';
 
 const Footer = () => {
     return (
-        <div>
-           <InconContainer>
-               <HomeOutlinedIcon/>
-               <AddShoppingCartIcon/>
-               <PermIdentityIcon/>
-           </InconContainer>
-        </div>   
+        <InconContainer>
+            <HomeOutlinedIcon/>
+            <AddShoppingCartIcon/>
+            <PermIdentityIcon/>
+        </InconContainer>
     )
 }
 export default Footer

@@ -11,8 +11,3 @@ export const InconContainer = styled.div`
   align-items: center;
 
 `
-export const AddressSection = styled.section`
-  width:100vw;
-  height: 76px;
-  background-color: #eeeeee;
-`
