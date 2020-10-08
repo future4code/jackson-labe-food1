@@ -17,7 +17,7 @@ const Feed = () => {
     return (
         <FeedContainer>
             <HeaderFixed>
-                <Header title={'FutureEats'}/>
+                <Header title={"Restaurantes"} btnBack={false} />
                 <Search/>
                 <CategoryFilter/>
             </HeaderFixed>

@@ -9,26 +9,26 @@ import theme from '../../constants/theme'
 const CategoryFilter = (props) => {
     return (
         <CategoryContainer>
-        <ThemeProvider theme={theme}>
-            <Tabs
-                value={"selecionado"}
-                color={'primary'}
-                onChange={()=> null}
-                indicatorColor={'primary'}
-                textColor={'primary'}
-                variant="scrollable"
-                scrollButtons="auto"
-                aria-label="scrollable auto tabs example"
-            >
-              <Tab label="Pizza" />
-              <Tab label="Hamburger" />
-              <Tab label="Sorvete"/>
-              <Tab label="Refeição"/>
-              <Tab label="Oriental"/>
-              <Tab label="Salgados"/>
-              <Tab label="Doces"/>
-        </Tabs>
-    </ThemeProvider>
+            <ThemeProvider theme={theme}>
+                <Tabs
+                    value={"selecionado"}
+                    color={'primary'}
+                    onChange={()=> null}
+                    indicatorColor={'primary'}
+                    textColor={'primary'}
+                    variant="scrollable"
+                    scrollButtons="auto"
+                    aria-label="scrollable auto tabs example"
+                >
+                    <Tab label="Pizza" />
+                    <Tab label="Hamburger" />
+                    <Tab label="Sorvete"/>
+                    <Tab label="Refeição"/>
+                    <Tab label="Oriental"/>
+                    <Tab label="Salgados"/>
+                    <Tab label="Doces"/>
+                </Tabs>
+            </ThemeProvider>
         </CategoryContainer>
     );
 }
