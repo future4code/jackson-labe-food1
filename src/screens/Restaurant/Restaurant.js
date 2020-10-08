@@ -1,8 +1,21 @@
 import React from 'react'
+import Header from '../../components/Header/Header'
+import DetailsRestaurant from '../../components/DetailsRestaurant/DetailsRestaurant';
+import {ContainerRestaurant} from './styled'
+import CategoryDishes from '../../components/CategoryDishes/CategoryDishes';
 
 const Restaurant = () => {
+  
     return (
-        <div>Restaurant</div>
+      <ContainerRestaurant>
+          <Header title={"Restaurante"}/>
+          <DetailsRestaurant/>
+          <CategoryDishes title={"Principais"}/>
+          <CategoryDishes title={"Acompanhamento"}/>
+      </ContainerRestaurant>
     )
 }
 export default Restaurant
+
+
+

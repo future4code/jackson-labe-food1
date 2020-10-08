@@ -24,16 +24,16 @@ const Router = () => {
                     <Route exact path={"/signup"} >
                         <SignUp/>
                     </Route>
-                    <Route exact path={"/{{appName}}/address"} >
+                    <Route exact path={"/futureEatsA/address"} >
                         <AdressForm/>
                     </Route>
                     <Route exact path={"/feed"}>
                         <Feed/>
                     </Route>
-                    <Route exact path={"/{{appName}}/active-order"}>
+                    <Route exact path={"/futureEatsA/active-order"}>
                         <OrderInProgress/>
                     </Route>
-                    <Route exact path={"/{{appName}}/restaurants/100"}>
+                    <Route exact path={"/futureEatsA/restaurants/100"}>
                         <Restaurant/>
                     </Route>
                     <Route exact path={"/futureEatsA/profile"}>

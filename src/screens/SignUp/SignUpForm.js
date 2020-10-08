@@ -7,34 +7,52 @@ import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import { FilledInput, FormControl, InputLabel, OutlinedInput } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
+import useForm from '../../hooks/useForm';
+import { signUp } from '../../services/user'
 
 
-const SignUpForm = () => {
-  const [values, setValues] = useState({
-    amount: '',
-    password: '',
-    weight: '',
-    weightRange: '',
-    showPassword: false,
-  });
-  const handleClickShowPassword = () => {
-    setValues({ ...values, showPassword: !values.showPassword });
-  };
+const SignUpForm = (props) => {
+  const history = useHistory()
+  const [form, handleInputChange] = useForm({name: '', email: '', password: '', cpf:''})
+  const [isLoading, setIsLoading] = useState(false)
+  // const [values, setValues] = useState({
+  //   amount: '',
+  //   password: '',
+  //   weight: '',
+  //   weightRange: '',
+  //   showPassword: false,
+  // });
+  // const handleClickShowPassword = () => {
+  //   setValues({ ...values, showPassword: !values.showPassword });
+  // };
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  }; 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };    
+  // const handleMouseDownPassword = (event) => {
+  //   event.preventDefault();
+  // }; 
+  // const handleChange = (prop) => (event) => {
+  //   setValues({ ...values, [prop]: event.target.value });
+  // };    
+  const onClickSignUp = (event) => {
+    console.log(form)
+    event.preventDefault()
+    const element = document.getElementById('signup_form')
+    const isValid = element.checkValidity()
+    element.reportValidity()
+    if (isValid) {
+      signUp(form, history, props.setButtonName, setIsLoading)
+    }
+  }
+
 return (
-     
+  <form id={'signup_form'}>
+
          <SignUpFormContainer>
            <InputsContainer>
              <TextField
-              value={''}
-              name={'nome'}
-              onChange={()=>null}
+              value={form.name}
+              name={'name'}
+              onChange={handleInputChange}
               label={'Nome'}
               variant={'outlined'}
               fullWidth
@@ -43,9 +61,9 @@ return (
               margin={'normal'}
             />
              <TextField
-              value={''}
+              value={form.email}
               name={'email'}
-              onChange={()=>null}
+              onChange={handleInputChange}
               label={'E-mail'}
               variant={'outlined'}
               type={'email'}
@@ -55,9 +73,9 @@ return (
               margin={'normal'}
             />
              <TextField
-              value={''}
+              value={form.cpf}
               name={'cpf'}
-              onChange={()=>null}
+              onChange={handleInputChange}
               label={'CPF'}
               variant={'outlined'}
               fullWidth
@@ -67,7 +85,7 @@ return (
             />
             <br/>
           <FormControl variant="outlined" fullWidth required>
-          <InputLabel htmlFor="outlined-adornment-amount">Senha</InputLabel>
+          {/* <InputLabel htmlFor="outlined-adornment-amount">Senha</InputLabel>
           <OutlinedInput
             id="outlined-adornment-password"
             type={values.showPassword ? 'text' : 'password'}
@@ -111,12 +129,23 @@ return (
               </InputAdornment>
             }
             labelWidth={70}
+          /> */}
+          <TextField
+            value={form.password}
+            name={'password'}
+            onChange={handleInputChange}
+            label={'Senha'}
+            variant={'outlined'}
+            type={'password'}
+            fullWidth
+            required
+            margin={'normal'}
           />
 
         </FormControl>
           </InputsContainer>
           <Button
-            onClick={()=>null}
+            onClick={onClickSignUp}
             color={'primary'}
             variant={'contained'}
             type={'submit'}
@@ -126,7 +155,7 @@ return (
               Criar
           </Button>
         </SignUpFormContainer>
-   
+   </form>
   )
 }
 
