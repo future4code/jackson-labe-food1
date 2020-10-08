@@ -3,7 +3,8 @@ import { CardsContainer, FeedContainer, HeaderFixed } from './styled'
 import Header from '../../components/Header/Header';
 import Search from '../../components/Search/Search';
 import CategoryFilter from '../../components/CategoryFilter/CategoryFilter';
-import CardRestaurant from '../../components/CardRestaurant/CardRestaurant';
+import CardRestaurant from '../../components/CardRestaurant/CardRestaurant'
+import Footer from '../../components/Footer/Footer';
 
 const Feed = () => {
     return (
@@ -23,7 +24,7 @@ const Feed = () => {
                 <CardRestaurant/>
                 <CardRestaurant/>
            </CardsContainer>
-           
+         <Footer/>  
         </FeedContainer>
     )
 }

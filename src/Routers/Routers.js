@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Feed from '../screens/Feed/Feed';
+// import Feed from '../screens/Feed/Feed';
+
 import HomeScreen from '../screens/Home/HomeScreen';
 import Login from '../screens/Login/Login';
 import AdressForm from '../screens/Profile/AddressForm/AddressForm';
@@ -8,6 +9,7 @@ import Profile from '../screens/Profile/Profile';
 import OrderInProgress from '../screens/Restaurant/OrderInProgress';
 import Restaurant from '../screens/Restaurant/Restaurant';
 import SignUp from '../screens/SignUp/SignUp';
+import Feed from '../screens/Feed/Feed'
 
 
 const Router = () => {
@@ -28,6 +30,7 @@ const Router = () => {
                         <AdressForm/>
                     </Route>
                     <Route exact path={"/feed"}>
+                        {/* <Feed/> */}
                         <Feed/>
                     </Route>
                     <Route exact path={"/futureEatsA/active-order"}>

@@ -5,4 +5,5 @@ export const CategoryContainer = styled.div`
     display: flex;
     justify-content: center;
     box-sizing:border-box;
+    background-color: #fff;
 `

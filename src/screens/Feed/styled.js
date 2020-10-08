@@ -10,6 +10,7 @@ export const HeaderFixed = styled.div`
   position: fixed !important;
   top: 0;
   width: 100%;
+  height:64px;
   box-sizing: border-box;
   background-color: #fff;
   display: flex;
