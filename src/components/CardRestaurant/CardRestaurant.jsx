@@ -19,20 +19,23 @@ const useStyles = makeStyles({
   },
 });
 
-const CardRestaurant = ()=>{
+const CardRestaurant = (props)=>{
+  const { id, name, deliveryTime, logoUrl, address, category, description, shipping } = props.data
+
+
   const classes = useStyles();
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image="https://picsum.photos/250/150"
+          image={logoUrl}
         />
         <CardContent>
-            <Typography gutterBottom color={"primary"}variant="h6" component="p">Nome Restaurante</Typography>
+            <Typography gutterBottom color={"primary"}variant="h6" component="p">{name}</Typography>
             <Info>
-                <Button size="small" color="inherit">40 - 50min</Button>
-                <Button size="small" color="inherit">Frete R$3,00</Button>
+                <Button size="small" color="inherit">{deliveryTime}min</Button>
+                <Button size="small" color="inherit">Frete R${shipping},00</Button>
             </Info>
         </CardContent>
       </CardActionArea>
