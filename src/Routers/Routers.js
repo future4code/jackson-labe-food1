@@ -36,7 +36,7 @@ const Router = () => {
                     <Route exact path={"/{{appName}}/restaurants/100"}>
                         <Restaurant/>
                     </Route>
-                    <Route exact path={"/{{appName}}/profile"}>
+                    <Route exact path={"/futureEatsA/profile"}>
                         <Profile/>
                     </Route>
                 </Switch>
