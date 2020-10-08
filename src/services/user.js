@@ -36,3 +36,16 @@ export const signUp = (body, history, setButtonName, setIsLoading) => {
     //   alert("Falha no Cadastro, tente novamente")
     })
 }
+
+export const getRestaurants = (setListRestaurants) => {
+  const header = {headers: {auth: localStorage.getItem("token")}}
+
+  axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants`, header)
+  .then((response)=>{
+    setListRestaurants(response.data.restaurants)
+  })
+  .catch((erro)=>{
+    console.log("erro ao buscar lista de restaurantes")
+  })
+
+}
