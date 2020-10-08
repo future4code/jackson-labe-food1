@@ -8,15 +8,15 @@ export const login = (body, history,setIsLoading) => {
   )
     .then((response) => {
       console.log(response)
-    //   localStorage.setItem('token', response.data.token)
-    //   setIsLoading(false)
-    //   goToFeed(history)
-    //   setButtonName('Logout')
+      localStorage.setItem('token', response.data.token)
+      setIsLoading(false)
+      goToFeed(history)
+      
     })
     .catch((err) => {
-        console.error(err);
-    //   setIsLoading(false)
-    //   alert("Falha no Login, tente novamente")
+      console.error(err);
+      setIsLoading(false)
+      alert("Falha no Login, tente novamente")
     })
 }
 
