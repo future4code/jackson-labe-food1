@@ -11,11 +11,11 @@ import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 const AdressForm = () => {
     const history = useHistory();
   //////////validação do usuário por meio do token////////  
-    // useLayoutEffect(() => {
-    //     if(localStorage.getItem("token") == null){
-    //         goToLogin(history)
-    //     }
-    //   }, [])
+    useLayoutEffect(() => {
+        if(localStorage.getItem("token") == null){
+            goToLogin(history)
+        }
+      }, [])
 
     /////////////Cadastro do endereço////////////////////////
     const [form, setForm ] = useState({
@@ -38,17 +38,16 @@ const AdressForm = () => {
         const valido = elemento.checkValidity()
         elemento.reportValidity()
         if(valido){
-                axios.put(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/address`,{
+                axios.put(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/address`,form,{
                     headers:{
                                auth: localStorage.getItem('token')
                            }
-               },form).then((Response)=> {goToFeed(history)})
+               }).then((Response)=> {goToFeed(history)})
                 .catch((error) => {
                     console.log(error)
                     alert("Erro tente cadastrar novamente")
                 })
                 }
-    
     }
     
      return (
@@ -91,21 +90,7 @@ const AdressForm = () => {
                                         }}
                                 />
                             </Campo>
-                            <Campo>
-                                <TextField
-                                    id="complement-log"
-                                    label="Complemento"
-                                    placeholder="Apto./Bloco"
-                                    name="complement"
-                                    value={form.complement}
-                                    onChange={capturaEndereco}
-                                    variant="outlined"
-                                    fullWidth
-                                    InputLabelProps={{
-                                    shrink: true,
-                                    }}                                    
-                                />
-                            </Campo>
+                            
                             <Campo>
                                 <TextField
                                     required
@@ -122,6 +107,8 @@ const AdressForm = () => {
                                         }}
                                 />
                             </Campo>
+
+                            
                             <Campo>
                                 <TextField
                                     required
@@ -146,6 +133,22 @@ const AdressForm = () => {
                                     placeholder="Estado"
                                     name="state"
                                     value={form.state}
+                                    onChange={capturaEndereco}
+                                    variant="outlined"
+                                    fullWidth
+                                    InputLabelProps={{
+                                    shrink: true,
+                                    }}                                    
+                                />
+                            </Campo>
+
+                            <Campo>
+                                <TextField
+                                    id="complement-log"
+                                    label="Complemento"
+                                    placeholder="Apto./Bloco"
+                                    name="complement"
+                                    value={form.complement}
                                     onChange={capturaEndereco}
                                     variant="outlined"
                                     fullWidth

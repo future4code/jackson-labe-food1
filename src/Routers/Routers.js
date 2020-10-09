@@ -5,7 +5,7 @@ import HomeScreen from '../screens/Home/HomeScreen';
 import Login from '../screens/Login/Login';
 import AdressForm from '../screens/Profile/AddressForm/AddressForm';
 import Profile from '../screens/Profile/Profile';
-import OrderInProgress from '../screens/Restaurant/OrderInProgress';
+import Cart from '../screens/Cart/Cart';
 import Restaurant from '../screens/Restaurant/Restaurant';
 import SignUp from '../screens/SignUp/SignUp';
 
@@ -30,8 +30,8 @@ const Router = () => {
                     <Route exact path={"/feed"}>
                         <Feed/>
                     </Route>
-                    <Route exact path={"/futureEatsA/active-order"}>
-                        <OrderInProgress/>
+                    <Route exact path={"/futureEatsA/carrinho"}>
+                        <Cart/>
                     </Route>
                     <Route exact path={"/futureEatsA/restaurants/100"}>
                         <Restaurant/>
