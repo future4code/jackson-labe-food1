@@ -7,9 +7,11 @@ import { goToFeed, goToLogin } from '../../../Routers/Cordinators';
 import {getFullAdress} from '../../../services/user'
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import Header from '../../../components/Header/Header';
+import useProtectedPage from '../../../hooks/useProtectedPage'
 
 
 const EditAdress = () => {
+    useProtectedPage()
     const history = useHistory();
     const [form, setForm ] = useState({ })
 
