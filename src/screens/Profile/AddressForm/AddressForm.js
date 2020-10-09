@@ -42,7 +42,9 @@ const AdressForm = () => {
                     headers:{
                                auth: localStorage.getItem('token')
                            }
-               }).then((Response)=> {goToFeed(history)})
+               }).then((Response)=> {
+                localStorage.setItem("token", Response.data.token)   
+                goToFeed(history)})
                 .catch((error) => {
                     console.log(error)
                     alert("Erro tente cadastrar novamente")

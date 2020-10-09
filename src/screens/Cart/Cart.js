@@ -1,7 +1,9 @@
 import { createMuiTheme, ThemeProvider, Typography } from '@material-ui/core'
 import { green } from '@material-ui/core/colors';
-import React from 'react'
+import React, { useEffect, useLayoutEffect, useState } from 'react'
 import styled from 'styled-components'
+import axios from 'axios'
+import { goToFeed, goToLogin } from '../../Routers/Cordinators';
 
 
 import Radio from '@material-ui/core/Radio';
@@ -10,6 +12,7 @@ import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormControl from '@material-ui/core/FormControl';
 import Button from '@material-ui/core/Button';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 const PaiCar = styled.div`
     max-width: 100vw;
@@ -55,7 +58,31 @@ export const theme2 = createMuiTheme({
 
 
 const Cart = () => {
+    const history = useHistory();
+
+    useLayoutEffect(() => {
+        if(localStorage.getItem("token") == null){
+            goToLogin(history)
+        }
+      }, [])
    
+    const [pedidos, setPedidos] = useState({});
+
+    useEffect(() => {
+            axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/active-order`,{
+                            headers:{
+                                    auth: localStorage.getItem('token')
+                                }
+                    }).then((Response)=> { setPedidos(Response)})
+                        .catch((error) => {
+                            console.log(error)
+                        })  
+    }, [])
+
+    const MostraPedidos = () =>{
+         
+           
+    }
 
     return (
         <PaiCar>
@@ -72,7 +99,7 @@ const Cart = () => {
                 </CardContent>
             </Card>
             <ItensCarrinho>
-                <p>Carrinho vazio</p>
+            {MostraPedidos()}
             </ItensCarrinho>
                 <Fret>Frete R$ 00.00</Fret>   
             <Val>
@@ -125,6 +152,6 @@ const Cart = () => {
         
     ); 
 
-
 }
+
 export default Cart;
