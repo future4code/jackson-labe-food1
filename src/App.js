@@ -5,8 +5,7 @@ import EditAdress from './screens/Profile/EditAdress/EditAdress';
 function App() {
   return (
     < >
-      {/* <Router/> */}
-      <EditAdress/>
+      <Router/>
     </>
   );
 }
