@@ -43,6 +43,7 @@ export const getRestaurants = (setListRestaurants) => {
   axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants`, header)
   .then((response)=>{
     setListRestaurants(response.data.restaurants)
+    console.log('requisição feita')
   })
   .catch((erro)=>{
     console.log("erro ao buscar lista de restaurantes")
