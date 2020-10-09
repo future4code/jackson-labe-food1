@@ -16,18 +16,40 @@ const Feed = () => {
     useProtectedPage()
     const [listRestaurants, setListRestaurants] = useState([])
     const [isLoading, setIsLoading] = useState(false)
+    const [textSearch, setTextSearch] = useState('')
    
     
     useEffect(()=>{
+        console.log('use effect')
         getRestaurants(setListRestaurants)
     },[])
+
+    const changeSearch = (event) =>{
+        setTextSearch(event.target.value)
+    }
+
+    const searchRestaurant = () =>{
+        console.log('buscando')
+        if(textSearch !== ''){
+           const filter = listRestaurants.filter((item)=>{
+               return item.name.toLowerCase() === textSearch.toLowerCase()
+           })
+           setListRestaurants(filter)
+        }else{
+            getRestaurants(setListRestaurants)
+        }
+    }
 
     return (
         <FeedContainer>
              {listRestaurants.length > 0 ? getRestaurants() : <Loading/>}
             <HeaderFixed>
                 <Header title={"Restaurantes"} btnBack={false} />
-                <Search/>
+                <Search 
+                    value={textSearch}
+                    change={changeSearch}
+                    submit={searchRestaurant}
+                />
                 <CategoryFilter/>
             </HeaderFixed>
 
