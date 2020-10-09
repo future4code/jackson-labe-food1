@@ -62,3 +62,17 @@ export const getRestaurants = (setListRestaurants) => {
 //   })
 
 // }
+
+
+export const getFullAdress = (setForm) => {
+  const header = {headers: {auth: localStorage.getItem("token")}}
+
+  axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/profile/address`, header)
+  .then((response)=>{
+    setForm(response.data.address)
+  })
+  .catch((erro)=>{
+    console.log("erro ao buscar dados de endereço")
+  })
+
+}
