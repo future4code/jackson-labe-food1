@@ -19,19 +19,21 @@ const useStyles = makeStyles({
     },
   });
 
-const DetailsRestaurant = () => {
+const DetailsRestaurant = (props) => {
+    
     const classes = useStyles();
+ 
     return (
     
-        <Details>
-            <Card className={classes.root} variant='outlined'>
+        <Details  >
+            <Card className={classes.root} variant='outlined' >
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image="https://picsum.photos/250/150"
+                        image={"https://picsum.photos/250/150"}
                     />
-                    <CardContent>
-                        <Title>Nome do Restaurante</Title>
+                    <CardContent onClick={props.onClick} >
+                        <Title>{props.name}</Title>
                         <Info> 
                             <p>Tipo</p>
                             <Values>

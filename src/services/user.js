@@ -49,3 +49,16 @@ export const getRestaurants = (setListRestaurants) => {
   })
 
 }
+
+// export const getRestaurantDetail = (setRestaurants) => {
+//   const header = {headers: {auth: localStorage.getItem("token")}}
+
+//   axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants/${id}`, header)
+//   .then((response)=>{
+//     setListRestaurants(response.data.restaurant.products)
+//   })
+//   .catch((erro)=>{
+//     console.log("Restaurante não encontrado")
+//   })
+
+// }
