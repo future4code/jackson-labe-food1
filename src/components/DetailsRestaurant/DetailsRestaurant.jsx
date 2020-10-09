@@ -20,7 +20,7 @@ const useStyles = makeStyles({
   });
 
 const DetailsRestaurant = (props) => {
-    
+    const {category , name,  description, address, deliveryTime,logoUrl , shipping} = props.dados
     const classes = useStyles();
  
     return (
@@ -30,17 +30,18 @@ const DetailsRestaurant = (props) => {
                 <CardActionArea>
                     <CardMedia
                         className={classes.media}
-                        image={"https://picsum.photos/250/150"}
+                        image={logoUrl}
                     />
-                    <CardContent onClick={props.onClick} >
-                        <Title>{props.name}</Title>
+                    <CardContent >
+                        <Title>{name}</Title>
                         <Info> 
-                            <p>Tipo</p>
+                            <p>{category}</p>
+                            <p>{description}</p>
                             <Values>
-                                <p>50 - 60min</p>
-                                <p>Frete R$12,00</p>
+                                <p>Tempo de entrega:{deliveryTime} min</p>
+                                <p>Frete R${shipping}</p>
                             </Values>
-                            <p>R. Fradique Coutinho, 1136 - Vila Madalena</p>
+                            <p>{address}</p>
                         </Info>
                     </CardContent>
                 </CardActionArea>

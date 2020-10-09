@@ -50,18 +50,22 @@ export const getRestaurants = (setListRestaurants) => {
 
 }
 
-// export const getRestaurantDetail = (setRestaurants) => {
-//   const header = {headers: {auth: localStorage.getItem("token")}}
+export const getRestaurantDetail = (setRestaurants ,setProduts, id) => {
+  const header = {headers: {auth: localStorage.getItem("token")}}
 
-//   axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants/${id}`, header)
-//   .then((response)=>{
-//     setListRestaurants(response.data.restaurant.products)
-//   })
-//   .catch((erro)=>{
-//     console.log("Restaurante não encontrado")
-//   })
+  axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants/${id}`, header)
+  .then((response)=>{
+    setRestaurants(response.data.restaurant)
+    setProduts(response.data.restaurant.products)
+    //console.log(response.data.restaurant)
+    //console.log(response.data.restaurant.products)
 
-// }
+  })
+  .catch((erro)=>{
+    console.log("Restaurante não encontrado")
+  })
+
+}
 
 
 export const getFullAdress = (setForm) => {
