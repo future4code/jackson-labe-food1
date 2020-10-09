@@ -24,8 +24,8 @@ export function goToAddress(history){
 export function goToPerfil(history){
       history.push(`/futureEatsA/profile`)
   }
-export function goToRestautante(history){
-    history.push(`/futureEatsA/restaurants/100`)
+export function goToRestautante(history , id){
+    history.push(`/futureEatsA/restaurants/${id}`)
 }
 export function goToCarrinho(history){
     history.push("/futureEatsA/active-order")

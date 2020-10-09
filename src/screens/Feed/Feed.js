@@ -33,7 +33,7 @@ const Feed = () => {
 
            <CardsContainer>
                {listRestaurants.map((restaurant)=>{
-                   return <CardRestaurant data={restaurant} onClick={() => goToRestautante(history, restaurant.id)}/>
+                   return <CardRestaurant data={restaurant} onClick={() => goToRestautante(history ,restaurant.id )}/>
                })}
 
            </CardsContainer>

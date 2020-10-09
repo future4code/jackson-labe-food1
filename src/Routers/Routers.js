@@ -36,7 +36,7 @@ const Router = () => {
                     <Route exact path={"/futureEatsA/active-order"}>
                         <OrderInProgress/>
                     </Route>
-                    <Route exact path={"/futureEatsA/restaurants/100"}>
+                    <Route exact path={"/futureEatsA/restaurants/:id"}>
                         <Restaurant/>
                     </Route>
                     <Route exact path={"/futureEatsA/profile"}>
