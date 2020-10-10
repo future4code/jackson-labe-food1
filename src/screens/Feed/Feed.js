@@ -17,6 +17,7 @@ const Feed = () => {
     const [listRestaurants, setListRestaurants] = useState([])
     const [isLoading, setIsLoading] = useState(false)
     const [textSearch, setTextSearch] = useState('')
+    const [valueCategory, setValueCategory] = useState("Todos");
    
     
     useEffect(()=>{
@@ -40,6 +41,10 @@ const Feed = () => {
         }
     }
 
+    const handleCategory = (event) => {
+        setValueCategory(event.target.innerHTML);
+    };
+
     return (
         <FeedContainer>
              {listRestaurants.length > 0 ? getRestaurants() : <Loading/>}
@@ -50,12 +55,17 @@ const Feed = () => {
                     change={changeSearch}
                     submit={searchRestaurant}
                 />
-                <CategoryFilter/>
+                <CategoryFilter value={valueCategory} change={handleCategory}/>
             </HeaderFixed>
 
            <CardsContainer>
                {listRestaurants.map((restaurant)=>{
-                   return <CardRestaurant data={restaurant} onClick={() => goToRestautante(history ,restaurant.id )}/>
+                   if(valueCategory !=='Todos'){
+                        return valueCategory === restaurant.category && 
+                        <CardRestaurant data={restaurant} onClick={() => goToRestautante(history ,restaurant.id )}/>
+                   }else{
+                        return <CardRestaurant data={restaurant} onClick={() => goToRestautante(history ,restaurant.id )}/>
+                   }
                })}
 
            </CardsContainer>
