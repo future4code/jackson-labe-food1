@@ -15,7 +15,7 @@
 - Finalizar pedido e verificar historico
 
 ### Link do Surge:
-[LabeFood](http://http://labefood1.surge.sh)
+[LabeFood](http://labefood1.surge.sh)
 
 ### Imagens
 
