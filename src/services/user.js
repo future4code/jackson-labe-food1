@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { goToFeed } from '../Routers/Cordinators'
+import { goToFeed, goToAddress } from '../Routers/Cordinators'
 
 export const login = (body, history,setIsLoading) => {
   setIsLoading(true)
@@ -25,10 +25,10 @@ export const signUp = (body, history, setButtonName, setIsLoading) => {
   axios.post('https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/signup', body)
     .then((response)=>{
       console.log(response)
-    //   localStorage.setItem('token', response.data.token)
-    //   setIsLoading(false)
-    //   goToRecipesFeed(history)
-    //   setButtonName('Logout')
+      localStorage.setItem('token', response.data.token)
+      setIsLoading(false)
+      goToAddress(history)
+      setButtonName('Logout')
     })
     .catch((error) => {
       console.log(error)
@@ -39,7 +39,7 @@ export const signUp = (body, history, setButtonName, setIsLoading) => {
 
 export const getRestaurants = (setListRestaurants) => {
   const header = {headers: {auth: localStorage.getItem("token")}}
-
+ 
   axios.get(`https://us-central1-missao-newton.cloudfunctions.net/futureEatsA/restaurants`, header)
   .then((response)=>{
     setListRestaurants(response.data.restaurants)

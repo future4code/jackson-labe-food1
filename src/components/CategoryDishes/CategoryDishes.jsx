@@ -11,16 +11,14 @@ const arrayCategorias = props.dados.map((item) => {
   const listaCategoria = arrayCategorias.filter((item, index) => {
     return arrayCategorias.indexOf(item) === index;
   });
-  //temos: ["Pastel", "Salgado", "Lanche", "Acompanhamento", "Pizza", "Bebida"]
-  //agora pra cada categoria retornamos uma seção com os 
-  // respectivos pratos
+  
     return (
         listaCategoria.map((categoria)=>{
             return(
                 
           <Sections>
               <TitleSection>{categoria}</TitleSection>
-                    <Dish>
+              <Dish>
                   <CardDish categoria={categoria} dadosCategoria={props.dados}/>
               </Dish>
           </Sections>

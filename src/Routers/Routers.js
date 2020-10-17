@@ -30,7 +30,6 @@ const Router = () => {
                         <AdressForm/>
                     </Route>
                     <Route exact path={"/feed"}>
-                        {/* <Feed/> */}
                         <Feed/>
                     </Route>
                     <Route exact path={"/futureEatsA/carrinho"}>

@@ -21,7 +21,6 @@ const Feed = () => {
    
     
     useEffect(()=>{
-        console.log('use effect')
         getRestaurants(setListRestaurants)
     },[])
 
