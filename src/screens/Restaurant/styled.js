@@ -7,6 +7,9 @@ export const ContainerRestaurant = styled.div`
   margin:0;
   position: relative;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `
 export const Sections = styled.section`
   width: 100%;

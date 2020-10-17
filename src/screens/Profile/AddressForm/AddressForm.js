@@ -2,7 +2,7 @@ import React, { useLayoutEffect, useState } from 'react'
 import axios from 'axios'
 import TextField from '@material-ui/core/TextField';
 import { Button, ThemeProvider } from '@material-ui/core';
-import { Campo, Div, FormAddre, H4, theme } from './StyledAddressForm';
+import { Campo, Div, FormAddre, H4, theme,ScreenContainer } from './StyledAddressForm';
 import { goToFeed, goToLogin } from '../../../Routers/Cordinators';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 import useProtectedPage from '../../../hooks/useProtectedPage';
@@ -56,6 +56,7 @@ const AdressForm = () => {
     
      return (
         <Div>
+            <ScreenContainer>
             
                 <form id="form-enderec" style={{width: '90%'}}>
                     <H4>Meu Endereço</H4>
@@ -174,7 +175,7 @@ const AdressForm = () => {
                             </Campo>
                         </FormAddre>    
                 </form>
-            
+                </ScreenContainer>
       </Div>
     )
 }

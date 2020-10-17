@@ -21,12 +21,8 @@ const SignUpForm = (props) => {
 
   const onClickSignUp = (event) => {
     event.preventDefault()
-    // const element = document.getElementById('signup_form')
-    // const isValid = element.checkValidity()
-    // element.reportValidity()
-    // if (isValid) {
+    
       signUp(form, history, props.setButtonName, setIsLoading)
-    // }
   }
     const handleClickShowPassword = () => {
       setValues({ ...values, showPassword: !values.showPassword });
